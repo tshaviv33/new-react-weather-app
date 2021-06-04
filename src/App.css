@@ -3,3 +3,12 @@ body {
   font-weight: 100;
   background-color: whitesmoke;
 }
+
+.App .weather-content {
+  background-color: white;
+  max-width: 600px;
+}
+
+.App form {
+  font-family: "Fira Sans", sans-serif;
+}

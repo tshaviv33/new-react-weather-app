@@ -22,12 +22,6 @@ export default function WeatherIcon(props) {
     "50n": "smog",
   };
 
-  // iconArray.map((iconArrayItem) => {
-  //   if (iconCode === iconArrayItem.code) {
-  //     icon = iconArrayItem.icon;
-  //   }
-  // });
-
   return (
     <i className={`fas fa-${iconMapping[iconCode]} weather-icon me-2`}></i>
   );

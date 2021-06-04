@@ -1,4 +1,3 @@
-import CitySearch from "./CitySearch";
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
 import "./WeatherInfo.css";
@@ -18,8 +17,7 @@ export default function WeatherInfo(props) {
   } = props.weatherData;
 
   return (
-    <div className="WeatherInfo w-100 shadow-lg rounded p-4 pt-2">
-      <CitySearch />
+    <div className="WeatherInfo w-100 p-4 pt-2">
       <h1>{city}</h1>
       <ul className="list-unstyled">
         <FormattedDate date={date} />
