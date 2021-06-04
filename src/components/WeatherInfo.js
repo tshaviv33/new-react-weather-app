@@ -1,4 +1,5 @@
 import CitySearch from "./CitySearch";
+import FormattedDate from "./FormattedDate";
 import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
@@ -20,9 +21,7 @@ export default function WeatherInfo(props) {
       <CitySearch />
       <h1>{city}</h1>
       <ul className="list-unstyled">
-        <li>
-          Wednesday <span className="result">07:00</span>
-        </li>
+        <FormattedDate date={date} />
         <li className="text-capitalize">{description}</li>
       </ul>
       <div className="d-flex justify-content-around align-items-center">
