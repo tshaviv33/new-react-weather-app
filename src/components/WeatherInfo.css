@@ -12,11 +12,12 @@
 .WeatherInfo h2 {
   font-family: "Fira Sans", sans-serif;
   font-size: 36px;
+  margin-bottom: 0;
 }
 
 .WeatherInfo .units {
   font-family: "Merriweather", serif;
-  font-size: 12px;
+  font-size: 13px;
   position: relative;
   bottom: 16px;
 }
@@ -25,7 +26,16 @@
   color: #ffca2d;
   font-size: 60px;
   position: relative;
-  bottom: 3px;
+  bottom: 6px;
+}
+
+.WeatherInfo li {
+  opacity: 0.8;
+}
+
+.WeatherInfo .high-low-temps {
+  font-size: 14px;
+  opacity: 0.8;
 }
 
 .WeatherInfo .result {
