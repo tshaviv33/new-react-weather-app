@@ -1,12 +1,10 @@
 import "./App.css";
-import CitySearch from "./components/CitySearch";
 import WeatherInfo from "./components/WeatherInfo";
 import Footer from "./components/Footer";
 
 export default function App() {
   return (
-    <div className="App container">
-      <CitySearch />
+    <div className="App container d-flex flex-column justify-content-center align-items-center vh-100">
       <WeatherInfo />
       <Footer />
     </div>

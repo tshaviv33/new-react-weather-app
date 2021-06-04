@@ -1,0 +1,8 @@
+.WeatherInfo {
+  background-color: white;
+}
+
+.WeatherInfo .weather-icon {
+  color: #ffca2d;
+  font-size: 60px;
+}
