@@ -1,3 +1,5 @@
+import "./CitySearch.css";
+
 export default function CitySearch() {
   return (
     <form className="CitySearch d-flex mt-3 mb-3">
