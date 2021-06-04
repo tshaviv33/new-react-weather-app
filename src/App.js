@@ -4,7 +4,7 @@ import WeatherInfo from "./components/WeatherInfo";
 import Footer from "./components/Footer";
 
 export default function App() {
-  const defaultCity = "tel aviv";
+  const defaultCity = "Tel Aviv";
   const [weatherData, setWeatherData] = useState({ ready: false });
 
   function handleData(data) {

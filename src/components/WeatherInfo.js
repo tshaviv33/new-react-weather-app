@@ -1,5 +1,6 @@
 import CitySearch from "./CitySearch";
 import FormattedDate from "./FormattedDate";
+import WeatherIcon from "./WeatherIcon";
 import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
@@ -26,9 +27,9 @@ export default function WeatherInfo(props) {
       </ul>
       <div className="d-flex justify-content-around align-items-center">
         <div className="d-flex align-items-center">
-          <i className="fas fa-sun weather-icon me-2"></i>
-          <div className="d-flex flex-column justify-content-center">
-            <h2 className="ms-1">
+          <WeatherIcon iconCode={icon} />
+          <div className="d-flex flex-column justify-content-center ms-1">
+            <h2>
               {temp}°<span className="units ms-1">C | F</span>
             </h2>
             <p className="high-low-temps">
