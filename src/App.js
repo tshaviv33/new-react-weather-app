@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import WeatherInfo from "./components/WeatherInfo";
+import WeatherForecast from "./components/WeatherForecast";
 import Footer from "./components/Footer";
 
 export default function App() {
@@ -60,6 +61,7 @@ export default function App() {
             </button>
           </form>
           <WeatherInfo weatherData={weatherData} />
+          <WeatherForecast weatherData={weatherData} />
         </div>
         <Footer />
       </div>

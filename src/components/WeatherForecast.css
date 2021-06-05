@@ -1,0 +1,23 @@
+/* .WeatherForecast {
+  opacity: 0.7;
+} */
+
+.WeatherForecast h3 {
+  font-size: 16px;
+  margin-bottom: 5px;
+  position: relative;
+  right: 3px;
+  opacity: 0.7;
+}
+
+.WeatherForecast .weather-icon {
+  font-size: 40px;
+  margin-bottom: 5px;
+  color: #ffca2d;
+  opacity: 0.9;
+}
+
+.WeatherForecast .temps {
+  font-size: 14px;
+  opacity: 0.7;
+}
