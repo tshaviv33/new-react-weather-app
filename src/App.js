@@ -61,7 +61,7 @@ export default function App() {
             </button>
           </form>
           <WeatherInfo weatherData={weatherData} />
-          <WeatherForecast weatherData={weatherData} />
+          <WeatherForecast lat={weatherData.lat} lon={weatherData.lon} />
         </div>
         <Footer />
       </div>

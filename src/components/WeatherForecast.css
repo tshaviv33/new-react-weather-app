@@ -19,5 +19,8 @@
 
 .WeatherForecast .temps {
   font-size: 14px;
+}
+
+.WeatherForecast .temp-min {
   opacity: 0.7;
 }

@@ -6,6 +6,8 @@ export default function Footer() {
         <a
           href="https://github.com/tshaviv33/new-react-weather-app"
           className="text-decoration-none"
+          target="_blank"
+          rel="noreferrer"
         >
           GitHub
         </a>
