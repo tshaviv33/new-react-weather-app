@@ -3,22 +3,24 @@ import WeatherForecastDay from "./WeatherForecastDay";
 import "./WeatherForecast.css";
 
 export default function WeatherForecast(props) {
-  const [forecastData, setForecastData] = useState({ ready: false });
+  const [ready, setReady] = useState(false);
+  const [forecastData, setForecastData] = useState();
 
   function handleForecastData(data) {
-    setForecastData({
-      ready: true,
-      day: data.daily[0].dt,
-      icon: data.daily[0].weather[0].icon,
-      tempMax: Math.round(data.daily[0].temp.max),
-      tempMin: Math.round(data.daily[0].temp.min),
-    });
+    setForecastData(data);
+    setReady(true);
   }
 
-  if (forecastData.ready) {
+  if (ready) {
     return (
       <div className="WeatherForecast d-flex justify-content-around m-4">
-        <WeatherForecastDay forecastData={forecastData} />
+        {forecastData.map((day, i) => {
+          if (i > 0 && i < 6) {
+            return <WeatherForecastDay forecastData={day} key={i} />;
+          } else {
+            return null;
+          }
+        })}
       </div>
     );
   } else {
@@ -29,7 +31,7 @@ export default function WeatherForecast(props) {
     fetch(weatherForecastApiUrl)
       .then((response) => response.json())
       .then((data) => {
-        handleForecastData(data);
+        handleForecastData(data.daily);
       });
 
     return null;

@@ -9,11 +9,13 @@ export default function WeatherForecastDay(props) {
 
   return (
     <div className="d-flex flex-column align-items-center">
-      <h3>{formatDay(props.forecastData.day)}</h3>
-      <WeatherIcon iconCode={props.forecastData.icon} />
+      <h3>{formatDay(props.forecastData.dt)}</h3>
+      <WeatherIcon iconCode={props.forecastData.weather[0].icon} />
       <div className="temps">
-        <span>{props.forecastData.tempMax}°</span>
-        <span className="temp-min ms-1">{props.forecastData.tempMin}°</span>
+        <span>{Math.round(props.forecastData.temp.max)}°</span>
+        <span className="temp-min ms-1">
+          {Math.round(props.forecastData.temp.min)}°
+        </span>
       </div>
     </div>
   );
