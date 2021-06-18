@@ -1,10 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import WeatherForecastDay from "./WeatherForecastDay";
 import "./WeatherForecast.css";
 
 export default function WeatherForecast(props) {
   const [ready, setReady] = useState(false);
   const [forecastData, setForecastData] = useState();
+
+  useEffect(() => {
+    setReady(false);
+  }, [props.coords]);
 
   function handleForecastData(data) {
     setForecastData(data);
@@ -24,9 +28,9 @@ export default function WeatherForecast(props) {
       </div>
     );
   } else {
-    const { lat, lon } = props;
+    const { coords } = props;
     const apiKey = "edcd663668b8087c96e88fbd0856ea83";
-    const weatherForecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+    const weatherForecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
 
     fetch(weatherForecastApiUrl)
       .then((response) => response.json())

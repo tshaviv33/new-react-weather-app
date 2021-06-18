@@ -21,9 +21,10 @@ export default function App() {
       description: data.weather[0].description,
       icon: data.weather[0].icon,
       wind: Math.round(data.wind.speed),
-      lat: data.coord.lat,
-      lon: data.coord.lon,
+      coords: data.coord,
     });
+
+    setCity("");
   }
 
   function search() {
@@ -52,6 +53,7 @@ export default function App() {
               type="search"
               placeholder="Enter a city..."
               className="form-control me-2"
+              value={city}
               onChange={(event) => {
                 setCity(event.target.value);
               }}
@@ -61,7 +63,7 @@ export default function App() {
             </button>
           </form>
           <WeatherInfo weatherData={weatherData} />
-          <WeatherForecast lat={weatherData.lat} lon={weatherData.lon} />
+          <WeatherForecast coords={weatherData.coords} />
         </div>
         <Footer />
       </div>
