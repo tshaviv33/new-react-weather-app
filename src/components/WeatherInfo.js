@@ -1,8 +1,10 @@
 import FormattedDate from "./FormattedDate";
 import WeatherIcon from "./WeatherIcon";
+import WeatherTemp from "./WeatherTemp";
 import "./WeatherInfo.css";
 
 export default function WeatherInfo(props) {
+  const { isCelsius, setIsCelsius } = props;
   const {
     city,
     date,
@@ -26,15 +28,13 @@ export default function WeatherInfo(props) {
       <div className="d-flex justify-content-around align-items-center">
         <div className="d-flex align-items-center">
           <WeatherIcon iconCode={icon} />
-          <div className="d-flex flex-column justify-content-center ms-1">
-            <h2>
-              {temp}°<span className="units ms-1">C | F</span>
-            </h2>
-            <p className="high-low-temps">
-              High: <span className="result me-2">{tempMax}°</span> Low:{" "}
-              <span className="result">{tempMin}°</span>
-            </p>
-          </div>
+          <WeatherTemp
+            temp={temp}
+            tempMax={tempMax}
+            tempMin={tempMin}
+            isCelsius={isCelsius}
+            setIsCelsius={setIsCelsius}
+          />
         </div>
         <div>
           <ul className="list-unstyled">

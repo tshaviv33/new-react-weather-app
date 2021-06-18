@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 export default function App() {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState("Tel Aviv");
+  const [isCelsius, setIsCelsius] = useState(true);
 
   function handleData(data) {
     setWeatherData({
@@ -62,8 +63,12 @@ export default function App() {
               Search
             </button>
           </form>
-          <WeatherInfo weatherData={weatherData} />
-          <WeatherForecast coords={weatherData.coords} />
+          <WeatherInfo
+            weatherData={weatherData}
+            isCelsius={isCelsius}
+            setIsCelsius={setIsCelsius}
+          />
+          <WeatherForecast coords={weatherData.coords} isCelsius={isCelsius} />
         </div>
         <Footer />
       </div>

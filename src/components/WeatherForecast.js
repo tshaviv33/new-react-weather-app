@@ -15,19 +15,7 @@ export default function WeatherForecast(props) {
     setReady(true);
   }
 
-  if (ready) {
-    return (
-      <div className="WeatherForecast d-flex justify-content-around m-4">
-        {forecastData.map((day, i) => {
-          if (i > 0 && i < 6) {
-            return <WeatherForecastDay forecastData={day} key={i} />;
-          } else {
-            return null;
-          }
-        })}
-      </div>
-    );
-  } else {
+  function load() {
     const { coords } = props;
     const apiKey = "edcd663668b8087c96e88fbd0856ea83";
     const weatherForecastApiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coords.lat}&lon=${coords.lon}&appid=${apiKey}&units=metric`;
@@ -37,7 +25,28 @@ export default function WeatherForecast(props) {
       .then((data) => {
         handleForecastData(data.daily);
       });
+  }
 
+  if (ready) {
+    return (
+      <div className="WeatherForecast d-flex justify-content-around m-4">
+        {forecastData.map((day, i) => {
+          if (i > 0 && i < 6) {
+            return (
+              <WeatherForecastDay
+                forecastData={day}
+                key={i}
+                isCelsius={props.isCelsius}
+              />
+            );
+          } else {
+            return null;
+          }
+        })}
+      </div>
+    );
+  } else {
+    load();
     return null;
   }
 }
