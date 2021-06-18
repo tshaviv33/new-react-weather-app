@@ -78,7 +78,9 @@ export default function App() {
 
     return (
       <div className="App container d-flex flex-column justify-content-center align-items-center vh-100">
-        Loading...
+        <div class="spinner-grow text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
         <Footer />
       </div>
     );

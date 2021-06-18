@@ -47,6 +47,12 @@ export default function WeatherForecast(props) {
     );
   } else {
     load();
-    return null;
+    return (
+      <div class="WeatherForecast d-flex justify-content-center m-4">
+        <div class="spinner-grow text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+        </div>
+      </div>
+    );
   }
 }
