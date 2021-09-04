@@ -30,7 +30,7 @@ export default function App() {
 
   function search() {
     const apiKey = "edcd663668b8087c96e88fbd0856ea83";
-    const weatherApiUrl = `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric `;
+    const weatherApiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric `;
 
     fetch(weatherApiUrl)
       .then((response) => response.json())
